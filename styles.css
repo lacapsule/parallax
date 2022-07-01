@@ -1,0 +1,224 @@
+@import url(reset.css);
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: auto;
+    z-index: 0;
+}
+header:before {
+    content: "";
+    background: url("media/img/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:50px;
+    height:50px;
+    margin-left: 2em;
+}
+header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 96vw;
+    height: 8vh;
+    border-radius: 33px;
+    margin: 1vw 1vh 1vw 1vh;
+    background: linear-gradient(floralwhite, white);
+    box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.6);
+    z-index: 6;
+}
+header:after {
+    content: "Cosmos shirt";
+    margin-right: 2em;
+}
+menu {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    height: 4vh;
+    background-color: azure;
+    border-radius: 33px;
+}
+menu:hover {
+    background-color: black;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+nav {
+    width: 10%;
+    height: 0.3vh;
+}
+a:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+a {
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+a:nth-child(1):before {
+    content: "ACCUEIL";
+}
+a:nth-child(2):before {
+    content: "PANIER";
+}
+a:nth-child(3):before {
+    content: "COMMANDES";
+}
+main {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: space-around;
+    justify-content: space-between;
+    background: linear-gradient(floralwhite, white);
+    position: sticky;
+    width: 100vw;
+    height: 350vh;
+    z-index: 1;
+}
+video:nth-child(1) {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
+.showroom {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    flex-flow: row wrap;
+    align-items: space-around;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+}
+img:nth-child(1),
+img:nth-child(2),
+img:nth-child(3) {
+    width: 30%;
+    height: 80%;
+    padding-top: 10%;
+    z-index: 4;
+}
+.background {
+    background-image: url(media/img/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    top: 40%;
+    width: 100%;
+    height: 40%;
+}
+
+.covering {
+    display: flex;
+    position: absolute;
+    top: 70%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url(media/img/nasa.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+}
+figure {
+    width: 50%;
+    height: auto;
+    margin-left: 50%;
+}
+img:nth-child(4),
+img:nth-child(5) {
+    width: 100%;
+    height: auto;
+    z-index: 4;
+}
+img:nth-child(4):after {
+    content: "Tee-shirt Femmes à partir de 20€";
+}
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 60vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9));
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: space-around;
+    justify-content: space-around;
+    width: 33%;
+    height: 30%;
+    background: linear-gradient(rgba(3, 3, 3, 0.1), rgba(0, 0, 0, 0.1));
+    padding: 10em;
+    border-radius: 33px;
+    opacity: 80%;
+    box-shadow: 2px 2px 8px rgba(3, 3, 3, 0.3),
+    2px 2px 8px rgba(3, 3, 3, 0.3),
+    inset 2px 2px 8px rgba(3, 3, 3, 0.3);
+    transition: 0.1s ease;
+}
+.footer:first-child {
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.footer:nth-child(2) {
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    align-self: flex-end;
+}
+.footer:hover {
+    background-color: aliceblue;
+    box-shadow: inset -2px -2px 18px rgba(21, 21, 21, 0.6);
+}
+.footer:hover > h3 {
+    color: black;
+    text-decoration: underline 2px dashed;
+    text-underline-position: under;
+    padding: 20px;
+}
+footer:hover > mark {
+    margin: 13px;
+}
+h3 {
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
+    border-radius: 33px;
+    padding: 10px;
+    transition: 0.6s ease-in-out;
+}
+h3:hover {
+    text-shadow: none;
+    color:rgba(0, 0, 0, 0.6);
+}
+address {
+    font-size: 1.3em;
+    width: 80%;
+    transition: 0.3s ease-in-out;
+}
+address:hover {
+    transform: scale(1.1);
+    background-color: yellow;
+    padding: 1%;
+    border-radius: 33px;
+}
+.footer:first-child > address,
+.footer:first-child > h3 {
+    text-align: right;
+}
+.footer:nth-child(2) > h3 + address,
+.footer:nth-child(2) > address + address {
+    align-self: flex-end;
+}
