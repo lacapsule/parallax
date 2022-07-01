@@ -1,85 +1,59 @@
 @import url(reset.css);
+:root {
+    /* BOX-SHADOW */
+    --box: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    --boxin: inset -2px -2px 18px rgba(21, 21, 21, 0.6);
+    --full: 100%;
+    --min: 10%;
+}
 body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100vw;
     height: auto;
     z-index: 0;
 }
-header:before {
-    content: "";
-    background: url("media/img/logo.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:50px;
-    height:50px;
-    margin-left: 2em;
-}
 /*******************************************************
-        Suppression de couleur noire
+       
         Suppression texte bleu
-        contrast sur le menu
-        Fixer la hauteur du header en pixels
 ********************************************************/
 header {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: sticky;
     top: 0;
-    width: 96vw;
-    height: 8vh;
+    width: 98vw;
+    height: 80px;
     border-radius: 33px;
     margin: 1vw 1vh 1vw 1vh;
     background: linear-gradient(floralwhite, white);
-    box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--box);
     z-index: 6;
 }
-header:after {
-    content: "Cosmos shirt";
-    margin-right: 2em;
-}
-menu {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-around;
-    width: 50%;
-    height: 4vh;
-    background-color: azure;
-    border-radius: 33px;
-}
-menu:hover {
-    background-color: black;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+img[src="media/img/logo.png"] {
+    width: auto;
+    height: 50px;
 }
 nav {
     width: 10%;
-    height: 0.3vh;
-}
-a:hover {
-    background-color: rgb(0, 0, 0);
-    color: white;
+    height: 2.4vh;
 }
 a {
     text-decoration: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
+    transition: 0.1s ease;
 }
-/*******************************************************
-        Passer le menu en HTML
-********************************************************/ 
-a:nth-child(1):before {
-    content: "ACCUEIL";
+a:hover {
+    transform: scale(1.1);
+    margin-top: -1%;
 }
-a:nth-child(2):before {
-    content: "PANIER";
-}
-a:nth-child(3):before {
-    content: "COMMANDES";
+h1 {
+    font-size: 1em;
 }
 main {
     display: flex;
@@ -89,7 +63,7 @@ main {
     background: linear-gradient(floralwhite, white);
     position: sticky;
     width: 100vw;
-    height: 350vh;
+    height: 433vh;
     z-index: 1;
 }
 video:nth-child(1) {
@@ -100,136 +74,83 @@ video:nth-child(1) {
 }
 .showroom {
     display: flex;
-    position: absolute;
-    top: 30%;
+    position: relative;
     flex-flow: row wrap;
     align-items: space-around;
     justify-content: space-around;
-    width: 100%;
+    width: 100vw;
     height: auto;
     z-index: 3;
 }
-img:nth-child(1),
-img:nth-child(2),
-img:nth-child(3) {
+figure {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
     width: 30%;
-    height: 80%;
-    padding-top: 10%;
-    z-index: 4;
+    height: 100%;
+}
+figure > img {
+    width: 400px;
+    height: auto;
 }
 .background {
     background-image: url(media/img/background.png);
     background-size: cover;
     background-attachment: fixed;
-    top: 40%;
     width: 100%;
-    height: 40%;
+    height: 10%;
 }
 
-.covering {
+.produits {
     display: flex;
-    position: absolute;
-    top: 70%;
-    flex-flow: row wrap;
+    position: relative;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: space-around;
-    background-image: url(media/img/nasa.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color:rgba(255, 255, 255, 0.2);
     width: 100%;
-    height: auto;
+    height: 50%;
     z-index: 3;
 }
-figure {
-    width: 50%;
-    height: auto;
-    margin-left: 50%;
-}
-img:nth-child(4),
-img:nth-child(5) {
-    width: 100%;
-    height: auto;
-    z-index: 4;
-}
-img:nth-child(4):after {
-    content: "Tee-shirt Femmes à partir de 20€";
-}
-/* Modification de class 
-    Simplification du code */
+.produits > figure {
+    padding: 2%;
+} 
 footer {
     display: flex;
+    position: relative;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
     width: 100vw;
-    height: 60vh;
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9));
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 50vh;
 }
-.footer {
+.contact {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: space-around;
     justify-content: space-around;
-    width: 33%;
-    height: 30%;
-    background: linear-gradient(rgba(3, 3, 3, 0.1), rgba(0, 0, 0, 0.1));
-    padding: 10em;
-    border-radius: 33px;
-    opacity: 80%;
-    box-shadow: 2px 2px 8px rgba(3, 3, 3, 0.3),
-    2px 2px 8px rgba(3, 3, 3, 0.3),
-    inset 2px 2px 8px rgba(3, 3, 3, 0.3);
-    transition: 0.1s ease;
-}
-.footer:first-child {
-    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
-}
-.footer:nth-child(2) {
-    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-    align-self: flex-end;
-}
-.footer:hover {
-    background-color: aliceblue;
-    box-shadow: inset -2px -2px 18px rgba(21, 21, 21, 0.6);
-}
-.footer:hover > h3 {
-    color: black;
-    text-decoration: underline 2px dashed;
-    text-underline-position: under;
-    padding: 20px;
-}
-footer:hover > mark {
-    margin: 13px;
+    width: 30%;
+    height: 300px;
 }
 h3 {
     font-size: 2em;
-    color: white;
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
-    border-radius: 33px;
-    padding: 10px;
-    transition: 0.6s ease-in-out;
+    width: 40%;
 }
-h3:hover {
-    text-shadow: none;
-    color:rgba(0, 0, 0, 0.6);
+i {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 address {
     font-size: 1.3em;
-    width: 80%;
+    width: 30%;
     transition: 0.3s ease-in-out;
 }
 address:hover {
-    transform: scale(1.1);
-    background-color: yellow;
-    padding: 1%;
-    border-radius: 33px;
-}
-.footer:first-child > address,
-.footer:first-child > h3 {
-    text-align: right;
-}
-.footer:nth-child(2) > h3 + address,
-.footer:nth-child(2) > address + address {
-    align-self: flex-end;
+    text-decoration: underline;
+    text-underline-position: under;
 }
