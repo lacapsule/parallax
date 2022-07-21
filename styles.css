@@ -31,25 +31,38 @@ header {
     height: 80px;
     border-radius: 33px;
     margin: 1vw 1vh 1vw 1vh;
+    font-size: 1em;
     background: linear-gradient(floralwhite, white);
     box-shadow: var(--box);
     z-index: 6;
+}
+.anim-header a {
+    color: white;
+    filter: invert;
+} 
+.anim-header {
+    color: white;
+    background: rgba(21, 21, 21, 0.9);
 }
 img[src="media/img/logo.png"] {
     width: auto;
     height: 50px;
 }
 nav {
-    width: 10%;
-    height: 2.4vh;
+    width: 8%;
+    height: 2.6vh;
 }
 a {
+    color: rgba(21, 21, 21, 0.9);
+    font-size: 0.8em;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.1s ease;
+    transition: 0.5s ease;
 }
 a:hover {
     transform: scale(1.1);
+    margin-bottom: -1%;
+    text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.7);
     margin-top: -1%;
 }
 h1 {
@@ -62,12 +75,12 @@ main {
     justify-content: space-between;
     background: linear-gradient(floralwhite, white);
     position: sticky;
-    width: 100vw;
-    height: 433vh;
+    width: 100%;
+    height: auto;
     z-index: 1;
 }
 video:nth-child(1) {
-    object-fit: cover;
+    object-fit: contain;
     width: 100vw;
     height: 100vh;
     z-index: 2;
@@ -78,7 +91,7 @@ video:nth-child(1) {
     flex-flow: row wrap;
     align-items: space-around;
     justify-content: space-around;
-    width: 100vw;
+    width: 100%;
     height: auto;
     z-index: 3;
 }
@@ -153,4 +166,7 @@ address {
 address:hover {
     text-decoration: underline;
     text-underline-position: under;
+}
+@media screen and (min-width: 650px) {
+
 }
